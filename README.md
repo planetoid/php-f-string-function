@@ -11,9 +11,9 @@ require_once __DIR__ . '/fprint.php';
 
 $fruit = "apple";
 $prize = 123.45;
-$input = 'Prize of {fruit} yesterday is $ {prize}';
+$input = 'Price of {fruit} yesterday is $ {prize}';
 echo fprint($input) . PHP_EOL;
-// expected result: Prize of apple yesterday is $ 123.45
+// expected result: Price of apple yesterday is $ 123.45
 
 $boolean_value = true;
 $input = "Is today a sunny day? {boolean_value}";
