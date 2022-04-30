@@ -23,7 +23,7 @@ echo fprint($input) . PHP_EOL;
 $null_value = NULL;
 $input = "My wallet is {null_value}";
 echo fprint($input) . PHP_EOL;
-// expected result: My pocket is NULL
+// expected result: My wallet is NULL
 
 $array_value = [""];
 $input = "My book list is {array_value}";
