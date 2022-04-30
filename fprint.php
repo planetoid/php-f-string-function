@@ -1,6 +1,6 @@
 <?php
 
-function fstring($input){
+function fprint($input){
     $debug = false;
     //$debug = true;
 
@@ -24,6 +24,7 @@ function fstring($input){
                     case "object":
                     case "array":
                     case "resource":
+                    case "resource (closed)":
                         $replacement = print_r($variable_value, true);
                         break;
                     case "boolean":
@@ -36,8 +37,14 @@ function fstring($input){
                     case "NULL":
                         $replacement = "NULL";
                         break;
-                    default:
+                    case "integer":
+                    case "double":
+                    case "string":
                         $replacement = $variable_value;
+                        break;
+                    default:
+                        $error = 'The type of variable is unknown: ' . gettype($variable_value);
+                        throw new Exception($error);
                 }
 
                 $needle = '{' . $variable_name . '}';

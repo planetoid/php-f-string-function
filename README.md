@@ -21,7 +21,7 @@ echo fprint($input) . PHP_EOL;
 // expected result: Is today a sunny day? TRUE
 
 $null_value = NULL;
-$input = "My pocket is {null_value}";
+$input = "My wallet is {null_value}";
 echo fprint($input) . PHP_EOL;
 // expected result: My pocket is NULL
 
