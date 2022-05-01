@@ -56,11 +56,20 @@ $expected = 'input: stdClass Object
 ';
 echo gettype($data) . ': ' . assertValue($expected, $actual) . PHP_EOL;
 
+$object = new stdClass;
+$object->title = "apple";
+$data = $object->title;
+$input = "input: {data}";
+$actual = fprint($input);
+$expected = 'input: apple';
+echo gettype($data) . ': ' . assertValue($expected, $actual) . PHP_EOL;
+
 
 $filename = __DIR__ . '/../README.md';
 $data = fopen( $filename, "r" );
 $actual = fprint($input);
-$expected = 'input: resource';
+$expected = 'input: Resource id #6';
+echo gettype($data) . ': ' . assertValue($expected, $actual) . PHP_EOL;
 
 function assertValue($expected, $actual){
     if($expected === $actual){
